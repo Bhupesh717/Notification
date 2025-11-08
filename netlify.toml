@@ -1,0 +1,15 @@
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+
+# Daily at 9:00 UTC (adjust as you like)
+[[functions.scheduled]]
+  function = "random-post-notification"
+  schedule = "0 9 * * *"
+
+# For testing (every 10 minutes) → comment the line above and uncomment below:
+# [[functions.scheduled]]
+#   function = "random-post-notification"
+#   schedule = "*/10 * * * *"
